@@ -1,0 +1,18 @@
+.floating-menu{
+    position: absolute;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    width: 80px;
+    height:80px;
+    text-align: center;
+    bottom: 10%;
+    right:10%;
+    border-style:solid;
+    border-color:black;
+    transition: all 0.5s;
+
+}
+:hover.floating-menu{
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
