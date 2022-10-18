@@ -1,11 +1,16 @@
 import Search from "./Search";
-import { useState } from "react";
+import { useEffect} from "react";
 
-const Header = () => {
-    const [toggleSearch, setToggleSearch] = useState(false)
+import './component.css'
 
+const Header = ({toggleSearch}) => {
+    useEffect(()=>{
+        if(toggleSearch){
+
+        }
+    },[toggleSearch])
     return ( 
-        <div className="navbar bg-slate-600 sticky w-[100%] p-3 ">
+        <div className="bg-slate-600 sticky w-[100%] p-3 navbar" >
             <h1 className="text-left font-extrabold text-3xl mb-7">AUTODECK</h1>
             {toggleSearch && <Search/>}
         </div>
