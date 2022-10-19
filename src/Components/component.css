@@ -6,9 +6,9 @@
 .floating-menu{
     position: absolute;
     background-color: blanchedalmond;
-    border-radius: 50%;
-    width: 80px;
-    height:80px;
+    border-radius: 5%;
+    min-width: 80px;
+    min-height:80px;
     bottom: 10%;
     right:10%;
     border-style:solid;
@@ -16,13 +16,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.5s;
+    
 }
-.floating-menu p{
-    text-align: center;
+.button-animate{
+    transition: all 1s;
 }
-:active.floating-menu{
-    transform: scale(1.2);
-    transition: all 0.5s;
+.button-animate:active{
+    transform: scale(0.7);
+    transition: all 1s;
 }
 
