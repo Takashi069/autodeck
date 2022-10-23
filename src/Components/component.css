@@ -1,16 +1,16 @@
 .navbar{
-    transition: all 2s;
+    transition: all ease-out 0.8s;
 }
 
 
 .floating-menu{
-    position: absolute;
-    background-color: blanchedalmond;
+    position: sticky;
     border-radius: 5%;
     min-width: 80px;
     min-height:80px;
-    bottom: 10%;
-    right:10%;
+    max-width: 80px;
+    bottom: 5%;
+    left:75%;
     border-style:solid;
     border-color:black;
     display: flex;
@@ -26,3 +26,10 @@
     transition: all 1s;
 }
 
+.loader{
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #ffd300;
+    width: 120px;
+    height: 120px;
+}
