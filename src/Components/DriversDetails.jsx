@@ -2,9 +2,7 @@ import useFetch from '../Hooks/useFetch'
 
 function hasdriverInfo(condition,driverInfo){
     if(condition === "true"){
-        driverInfo.map((driver)=>(
-           console.log(driver.NumberPlate)
-        ))
+       
         return(
             // <div id="TaskList">
             // {tasks.map((task) => (
