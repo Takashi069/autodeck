@@ -5,6 +5,7 @@ A simple web based application that displays the autorickshaw drivers offering s
 - [x] Have a design to work with 
 - [x] Setup the database (JSON)
 - [ ] Search Feature
-- [ ] Rate Chart
+- [x] Rate Chart
+- [x] Rate Table
 
 > Project in Development
