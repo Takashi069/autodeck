@@ -14,8 +14,9 @@ function App() {
   
   return (
     <div className="App font-sans">
+
       <AnimatePresence >
-        {(toggleCalc || toggleRate) && <PopUp isCalc={true} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
+        {(toggleCalc || toggleRate) && <PopUp isCalc={toggleCalc} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
       </AnimatePresence>
       <Header toggleSearch={toggleSearch}/>
       <div className='h-[80vh] w-[100%] flex flex-col items-center justify-center'>
