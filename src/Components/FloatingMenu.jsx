@@ -7,7 +7,6 @@ const FloatingMenu = ({toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,to
     const [toggleMenu,setToggleMenu] = useState(false)
     return (
         <AnimatePresence> 
-            {/* {console.log("Calc:",toggleCalc,"Rate:",toggleRate)} */}
             <motion.div 
                 key="menu"
                 animate={{height: toggleMenu ? 200 : 100}}

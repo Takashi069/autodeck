@@ -1,12 +1,19 @@
 import { BiRupee } from "react-icons/bi";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { useState } from "react";
+import {motion} from 'framer-motion';
 
 const Calc = ({setToggleCalc}) => {
     const [persons,setPersons] = useState(1)
     const [rate,setRate] = useState(0)
     return ( 
-        <div className="bg-white rounded-md min-h-[40vh] max-h-[40vh] min-w-[65%] shadow-sm flex flex-col justify-center items-center">
+        <motion.div 
+            className="bg-white mb-[5%] rounded-md min-h-[40vh] max-h-[40vh] min-w-[65%] shadow-sm flex flex-col justify-center items-center"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+        >
+         
             <h1 className="text-xl font-extrabold text-[#ffd300]">RATE SPLITTER</h1>
             <br></br>
             <div className="Amount flex flex-row items-center justify-center h-[4vh] max-h-[4vh] min-w-[65%] ">
@@ -24,7 +31,7 @@ const Calc = ({setToggleCalc}) => {
                 <label className="mr-3" htmlFor="personSlider"><BsFillPeopleFill size={25}/></label>
                 <input 
                     id="personSlider"
-                    className="border-2 border-[#ffd300] max-w-[65%] bg-yellow-50 rounded-lg appearance-none cursor-pointer range-sm accent-[#ffd300]  " 
+                    className="border-2 border-[#ffd300] min-w-[65%] max-w-[85%] bg-yellow-50 rounded-lg appearance-none cursor-pointer range-sm accent-[#ffd300]  " 
                     type="range"
                     min="1"
                     max="5"
@@ -49,7 +56,7 @@ const Calc = ({setToggleCalc}) => {
             >
                 Close
             </button>
-        </div>
+        </motion.div>
      );
 }
  

@@ -45,7 +45,6 @@ function hasdriverInfo(condition,driverInfo){
 const DriverDetails = () => {
 
     const {data:driverInfo } = useFetch("https://autodeck-database.herokuapp.com/driverDetails")
-    console.log(driverInfo)
   
     let driversPresent
     if(driverInfo === null || Object.keys(driverInfo).length === 0)

@@ -18,7 +18,6 @@ const useFetch = (url) =>{ //url is passed as a parameter to make it more re-usa
           .then(data =>{
             //This data is the parsed data after getting a response from the link
             setData(data)
-            console.log("in Hook"+data);
             setdataRetrieved(true)
             setErrorDetected(false);
           })
