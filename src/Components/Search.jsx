@@ -32,6 +32,7 @@ const Search = () => {
                 ></input>
                 <Select
                     defaultMenuIsOpen={false}
+                    defaultInputValue={"Name"}
                     onChange={(e)=>{setSearchType(e.value)}}
                     options={options}
                 />

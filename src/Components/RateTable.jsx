@@ -1,11 +1,11 @@
 import {motion} from 'framer-motion';
 import { BiRupee } from 'react-icons/bi';
 
-const RateTable = ({setRateTable,isRate}) => {
+const RateTable = ({setRateTable,isRate,isCalc}) => {
     return ( 
         <motion.div 
             key="rateTable" 
-            className="bg-white rounded-md min-h-[50vh] max-h-[60vh] min-w-[65%] max-w-[85%] shadow-sm flex flex-col justify-center items-center"
+            className="bg-white rounded-md min-h-[60vh] max-h-[60vh] min-w-[40%] max-w-[85%] shadow-sm flex flex-col justify-center items-center"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
@@ -33,7 +33,7 @@ const RateTable = ({setRateTable,isRate}) => {
                 </p>
                 <p className='flex flex-row items-center justify-center text-lg font-bold text-[#746418] transistion-all duration-500 hover:scale-105'>
                     <BiRupee/>
-                    300
+                    350
                 </p>
                 <p className='flex flex-row justify-center items-center transistion-all duration-500 hover:scale-105'>
                     Karunagapally Railway Station 
