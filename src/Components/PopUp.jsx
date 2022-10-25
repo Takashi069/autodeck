@@ -6,16 +6,15 @@ const PopUp = ({isCalc,isRate,setToggleCalc,setRate}) => {
     return ( 
         <motion.div 
             key="popup"
-            className="overlay"
+            className="overlay overflow-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             
         >
-            {isRate && <RateTable key="RateTable" setRateTable={setRate} isRate={isRate}/>}
+            {isRate && <RateTable key="RateTable" setRateTable={setRate} isRate={isRate} isCalc={isCalc}/>}
             <br />
-            <br />
-            {isCalc && <Calc key="Calculator" setToggleCalc={setToggleCalc}/>}
+            {isCalc && <Calc key="Calculator" setToggleCalc={setToggleCalc} isRate={isRate} isCalc={isCalc}/>}
             <br></br>
         </motion.div>
      );

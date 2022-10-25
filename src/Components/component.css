@@ -4,7 +4,7 @@
 
 
 .floating-menu{
-    position: sticky;
+    position: fixed;
     border-radius: 5%;
     min-width: 80px;
     min-height:80px;
@@ -20,11 +20,11 @@
     
 }
 .button-animate{
-    transition: all 1s;
+    transition: all 0.5s;
 }
 .button-animate:active{
     transform: scale(0.7);
-    transition: all 0.7s;
+    transition: all 0.5s;
 }
 
 .loader{
@@ -36,7 +36,7 @@
 }
 
 .overlay{
-    position: absolute;
+    position: fixed;
    
     z-index: 3;
     background-color: rgba(0,0,0,0.5);
@@ -45,7 +45,6 @@
     opacity:0.95;
 
     display: flex;
-    padding-top:10%;
     flex-direction: column;
     justify-content: center;
     align-items: center;

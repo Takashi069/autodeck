@@ -3,12 +3,12 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { useState } from "react";
 import {motion} from 'framer-motion';
 
-const Calc = ({setToggleCalc}) => {
+const Calc = ({setToggleCalc,isCalc,isRate}) => {
     const [persons,setPersons] = useState(1)
     const [rate,setRate] = useState(0)
     return ( 
         <motion.div 
-            className="bg-white mb-[5%] rounded-md min-h-[40vh] max-h-[40vh] min-w-[65%] shadow-sm flex flex-col justify-center items-center"
+            className={"bg-white mb-[5%] rounded-md min-h-[50vh] max-h-[50vh] min-w-[40%] shadow-sm flex flex-col justify-center items-center"}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
@@ -31,7 +31,7 @@ const Calc = ({setToggleCalc}) => {
                 <label className="mr-3" htmlFor="personSlider"><BsFillPeopleFill size={25}/></label>
                 <input 
                     id="personSlider"
-                    className="border-2 border-[#ffd300] min-w-[65%] max-w-[85%] bg-yellow-50 rounded-lg appearance-none cursor-pointer range-sm accent-[#ffd300]  " 
+                    className="border-2 border-[#ffd300] min-w-[65%] max-w-[85%] md:min-w-[25%]  bg-yellow-50 rounded-lg appearance-none cursor-pointer  accent-[#ffd300]  " 
                     type="range"
                     min="1"
                     max="5"
