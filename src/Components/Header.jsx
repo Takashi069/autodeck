@@ -2,7 +2,7 @@ import Search from "./Search";
 import {  AnimatePresence, motion } from "framer-motion";
 import './component.css'
 
-const Header = ({toggleSearch}) => {
+const Header = ({toggleSearch,searchType,setSearchType, searchData,setSearchData}) => {
 
     return (
         <AnimatePresence>
@@ -27,7 +27,7 @@ const Header = ({toggleSearch}) => {
                                     duration:0.5
                                 }}}
                             >
-                                <Search/>
+                                <Search searchType={searchType} setSearchType={setSearchType} searchData={searchData} setSearchData={setSearchData}/>
                             </motion.div>
                         }
                     </AnimatePresence>

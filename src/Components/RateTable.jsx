@@ -13,6 +13,7 @@ const RateTable = ({setRateTable,isRate,isCalc}) => {
             <br></br>
             <h1 className="text-xl font-extrabold text-[#ffd300]">RATE TABLE</h1>
             <br></br>
+            <small>Prices are bound to fluctuate based on Fuel prices</small>
             <div className='grid grid-rows-4 grid-cols-2 gap-4 border-4 rounded-lg border-[#ffd300] m-4 p-3'>
                 <p className='flex flex-row justify-center items-center transistion-all duration-500 hover:scale-105  '>
                     Kayamkulam Bus Stand

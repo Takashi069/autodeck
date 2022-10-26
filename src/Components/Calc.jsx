@@ -8,7 +8,7 @@ const Calc = ({setToggleCalc,isCalc,isRate}) => {
     const [rate,setRate] = useState(0)
     return ( 
         <motion.div 
-            className={"bg-white mb-[5%] rounded-md min-h-[50vh] max-h-[50vh] min-w-[40%] shadow-sm flex flex-col justify-center items-center"}
+            className={"  bg-white mb-[5%] rounded-md min-h-[50vh] max-h-[50vh] min-w-[40%] shadow-sm flex flex-col justify-center items-center"}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
