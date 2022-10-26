@@ -3,7 +3,7 @@ import { BiCalculator, BiRupee } from "react-icons/bi";
 import { motion,AnimatePresence } from "framer-motion";
 import Search from "./Search";
 
-const Navbar = ({toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,toggleRate,setToggleRate}) => {
+const Navbar = ({searchType,setSearchType,searchData,setSearchData,toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,toggleRate,setToggleRate}) => {
     return ( 
         <motion.div 
             id="navbar" 
@@ -24,7 +24,7 @@ const Navbar = ({toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,toggleRa
                                     duration:0.5
                                 }}}
                             >
-                                <Search/>
+                                <Search searchType={searchType} setSearchType={setSearchType} searchData={searchData} setSearchData={setSearchData}/>
                             </motion.div>
                         }
                     </AnimatePresence>

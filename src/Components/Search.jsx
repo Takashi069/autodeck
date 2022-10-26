@@ -1,12 +1,10 @@
-import { useState } from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoIosContact } from "react-icons/io";
 import { MdElectricRickshaw } from "react-icons/md";
 import Select from 'react-select';
 import "./component.css"
-const Search = () => {
+const Search = ({searchType,setSearchType,searchData,setSearchData}) => {
     
-    const [searchType, setSearchType] = useState("Name")
     const options = [
         { value: 'Name', label: <IoIosContact size={20}/> },
         { value: 'Phone', label: <BsFillTelephoneFill  size={20}/> },
@@ -27,12 +25,12 @@ const Search = () => {
                  <input 
                     type={searchType === "Name" || searchType === "NumberPlate" ? "text":"number"} 
                     className=" border-solid border-[#ffd300] text-center rounded-md p-1 max-w-[100%]  " 
-                    placeholder={searchType === "Name" ? "Name" : searchType === "Phone" ? "Phone Number" : "Number Plate"}
+                    placeholder={searchType === "Name" ? "Name" : searchType === "Phone" ? "Phone Number" : searchType!=="NumberPlate" ? "Choose an option" : "Number Plate"}
                     autoFocus
+                    onChange={(e)=>{setSearchData(e.target.value)}}
                 ></input>
                 <Select
                     defaultMenuIsOpen={false}
-                    defaultInputValue={"Name"}
                     onChange={(e)=>{setSearchType(e.value)}}
                     options={options}
                 />

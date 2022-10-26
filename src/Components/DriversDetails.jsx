@@ -1,32 +1,18 @@
-import useFetch from '../Hooks/useFetch'
+import { useState } from "react"
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+function errorMessage(){
+    return(
+        <h1>Error: Data Not Available<br/> Your requested information might not exist or the Server may be down</h1>
+    )
 }
 
-function hasdriverInfo(condition,driverInfo){
+function hasdriverInfo(condition,driverInfo,displayMessage,setDisplayMessage){
     if(condition === "true"){
-        shuffleArray(driverInfo)
-
         return(
-            // <div id="TaskList">
-            // {tasks.map((task) => (
-            //     <div id="Task" key={task.id}> 
-            //         <div id="Task-Details">
-            //             <h2>{task.taskName}</h2>
-            //             <p>Due on: {task.taskDate}</p>
-            //         </div>
-            //         <button id="Complete" onClick={() => handleDelete(task.id, true)}>Completed</button>
-            //         <button id="Delete" onClick={() => handleDelete(task.id, false)}>Delete</button>
-            //     </div> 
-            // ))}
-            // </div>
+          
             <div className="DriverList h-[100vh] ">
             {
-                driverInfo.map((driver)=>(
+                       driverInfo.map((driver)=>(
                     <div key={driver.id} className="driver-details  min-w-[80%] max-h-[60%] grid grid-cols-2 items-center justify-evenly rounded-md hover:scale-105 hover:bg-[#f7f6f5] transition-all duration-300">
                         <div className="image flex flex-row align-middle justify-center m-3 max-h-[8rem] bg-[#f7f6f9] p-2 rounded-md">
                             <img src={require("../assets/auto-rickshaw.png")} width="100px" height="100px" alt="autorickshaw"></img>
@@ -42,24 +28,33 @@ function hasdriverInfo(condition,driverInfo){
             </div>
         )
     }else{
+        setTimeout(()=>{
+            setDisplayMessage(true)
+        },10000)
         return(
-            <div className="DriverList flex flex-col justify-center">
-               <div className='loader animate-spin'></div>
+            <div className="DriverList flex flex-col justify-center items-center">
+                <div className='loader animate-spin'></div>
+                <br />
+               {
+                displayMessage && errorMessage()
+               }
+               
             </div>
+            
         )
     }
 }
 
-const DriverDetails = () => {
+const DriverDetails = ({driverInfo}) => {
 
-    const {data:driverInfo } = useFetch("https://autodeck-database.herokuapp.com/driverDetails")
   
     let driversPresent
+    const [displayMessage,setDisplayMessage] = useState(false);
     if(driverInfo === null || Object.keys(driverInfo).length === 0)
         driversPresent = "false";
     else driversPresent = "true";
     return ( 
-        hasdriverInfo(driversPresent,driverInfo)
+        hasdriverInfo(driversPresent,driverInfo,displayMessage,setDisplayMessage)
      );
 }
  
