@@ -75,9 +75,10 @@ function App() {
             <AnimatePresence >
               {(toggleCalc || toggleRate) && <PopUp isCalc={toggleCalc} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
             </AnimatePresence>
-            {windowSize.innerWidth<=1000 &&  <Header toggleSearch={toggleSearch} setSearchType={setSearchType} searchType={searchType} searchData={searchData} setSearchData={setSearchData}/> }
+
+            {windowSize.innerWidth<=1023 &&  <Header toggleSearch={toggleSearch} setSearchType={setSearchType} searchType={searchType} searchData={searchData} setSearchData={setSearchData}/> }
             {
-              windowSize.innerWidth>1000 && 
+              windowSize.innerWidth>1023 && 
               <Navbar
               searchType={searchType}
               setSearchType={setSearchType}
@@ -90,11 +91,12 @@ function App() {
               toggleRate={toggleRate} 
               setToggleRate={setToggleRate}
             />}
-            <div className='h-[100vh] w-[100%]  flex flex-col items-center justify-center overflow-scroll scroll-smooth'>
+
+            <div className='h-[100vh] w-[100%] grid grid-cols-1 justify-items-center overflow-scroll scroll-smooth lg:pl-[280px]'>
               <DriverDetails driverInfo={filteredDriverList} searchType={searchType} searchData={searchData}/>
             </div>
             { 
-              windowSize.innerWidth<=1000 && 
+              windowSize.innerWidth<=1023 && 
               <FloatingMenu 
                 toggleSearch={toggleSearch} 
                 setToggleSearch={setToggleSearch}

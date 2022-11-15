@@ -10,10 +10,11 @@ function hasdriverInfo(condition,driverInfo,displayMessage,setDisplayMessage){
     if(condition === "true"){
         return(
           
-            <div className="DriverList h-[100vh] ">
+            <div className="DriverList h-[100vh] grid grid-cols-1 lg:w-[90%] lg:grid-cols-2 lg:gap-x-[3rem]">
             {
                     driverInfo.map((driver)=>(
-                        <div key={driver.id} className="driver-details  min-w-[80%] max-h-[60%] grid grid-cols-2 items-center justify-evenly rounded-md hover:scale-105 hover:bg-[#f7f6f5] transition-all duration-300">
+
+                        <div key={driver.id} className="driver-details  min-w-[80%] grid grid-cols-2 items-center justify-evenly rounded-md hover:scale-105 hover:bg-[#f7f6f5] transition-all duration-300">
                             <div className="image flex flex-row align-middle justify-center m-3 max-h-[8rem] bg-[#f7f6f9] p-2 rounded-md">
                                 <img src={require("../assets/auto-rickshaw.png")} width="100px" height="100px" alt="autorickshaw"></img>
                             </div>
