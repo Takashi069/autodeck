@@ -75,6 +75,7 @@ function App() {
             <AnimatePresence >
               {(toggleCalc || toggleRate) && <PopUp isCalc={toggleCalc} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
             </AnimatePresence>
+
             {windowSize.innerWidth<=1023 &&  <Header toggleSearch={toggleSearch} setSearchType={setSearchType} searchType={searchType} searchData={searchData} setSearchData={setSearchData}/> }
             {
               windowSize.innerWidth>1023 && 
@@ -90,6 +91,7 @@ function App() {
               toggleRate={toggleRate} 
               setToggleRate={setToggleRate}
             />}
+
             <div className='h-[100vh] w-[100%] grid grid-cols-1 justify-items-center overflow-scroll scroll-smooth lg:pl-[280px]'>
               <DriverDetails driverInfo={filteredDriverList} searchType={searchType} searchData={searchData}/>
             </div>
