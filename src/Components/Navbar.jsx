@@ -1,7 +1,10 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiCalculator, BiRupee } from "react-icons/bi";
+import {MdFeedback} from 'react-icons/md'
 import { motion,AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import Search from "./Search";
+
 
 const Navbar = ({searchType,setSearchType,searchData,setSearchData,toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,toggleRate,setToggleRate}) => {
     return ( 
@@ -13,57 +16,68 @@ const Navbar = ({searchType,setSearchType,searchData,setSearchData,toggleSearch,
         >
             <h1 className="font-extrabold text-3xl mb-7 mt-3 text-[#ffff] text-center ">AUTODECK</h1>
             <AnimatePresence>
-                        { 
-                        toggleSearch && 
-                            <motion.div
-                                key="searchPopUp"
-                                initial={{ opacity:0,scale:0}}
-                                animate={{ opacity:1,scale:1 }}
-                                exit={{opacity:0,scale:0}}
-                                transition={{scale:{
-                                    duration:0.5
-                                }}}
-                            >
-                                <Search searchType={searchType} setSearchType={setSearchType} searchData={searchData} setSearchData={setSearchData}/>
-                            </motion.div>
-                        }
-                    </AnimatePresence>
+                { 
+                toggleSearch && 
+                    <motion.div
+                        key="searchPopUp"
+                        initial={{ opacity:0,scale:0}}
+                        animate={{ opacity:1,scale:1 }}
+                        exit={{opacity:0,scale:0}}
+                        transition={{scale:{
+                            duration:0.5
+                        }}}
+                    >
+                        <Search searchType={searchType} setSearchType={setSearchType} searchData={searchData} setSearchData={setSearchData}/>
+                    </motion.div>
+                }
+            </AnimatePresence>
             <div id="utilities" className=" gap-4 justify-evenly items-center">
                 <div 
-                    className="flex flex-row items-center justify-center p-4 hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
+                    className="flex flex-row items-center justify-self-start p-4 hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
                     onClick={()=>{setToggleSearch(!toggleSearch)}}
                 >
                     <AiOutlineSearch 
-                        className={"mr-20 cursor-pointer"} 
+                        className={"mr-5 cursor-pointer"} 
                         size={35} 
                         // onClick={()=>{setToggleSearch(!toggleSearch)}}
                     />
                     <span className="text-2xl font-bold">Search</span>
                 </div>
                 <div 
-                    className="flex flex-row items-center justify-center p-4 hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
+                    className="flex flex-row items-center justify-self-auto p-4 hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
                     onClick={()=>{setToggleRate(!toggleRate)}}
-                    
                 >
                     <BiRupee 
-                        className={"mr-10 cursor-pointer"} 
+                        className={"mr-5 cursor-pointer"} 
                         size={35}
                         // onClick={()=>{setToggleRate(!toggleRate)}}
                     />
                     <span className="text-2xl font-bold">Rate Chart</span>
                 </div>
                 <div 
-                    className="flex flex-row items-center justify-center p-4  hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
+                    className="flex flex-row items-center justify-self-start p-4  hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
                     onClick={()=>{setToggleCalc(!toggleCalc)}}
                 >
                     <BiCalculator 
-                        className={"mr-10 cursor-pointer"} 
+                        className={"mr-5 cursor-pointer"} 
                         size={35}
                         // onClick={()=>{setToggleCalc(!toggleCalc)}}
                     />
                     <span className="text-2xl font-bold">Rate Splitter</span>
                 </div>
-                    
+                <Link to="/contact">
+                    <div 
+                        className="flex flex-row items-center justify-self-auto p-4  hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
+                        onClick={()=>{}}
+                    >
+                        <MdFeedback 
+                            className={"cursor-pointer justify-start mr-5"} 
+                            size={35}
+                            // onClick={()=>{setToggleCalc(!toggleCalc)}}
+                        />
+                        <span className="text-2xl font-bold">Feedback</span>
+                    </div>
+                </Link>
             </div>
         </motion.div>
      );

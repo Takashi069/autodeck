@@ -5,8 +5,10 @@ import FloatingMenu from './Components/FloatingMenu';
 import DriverDetails from './Components/DriversDetails';
 import PopUp from './Components/PopUp';
 import Navbar from './Components/Navbar';
+import Feedback from './Components/Feedback';
 import {AnimatePresence} from 'framer-motion'
 import useFetch from './Hooks/useFetch'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 
 function getWindowSize() {
@@ -66,39 +68,48 @@ function App() {
                 return driver
             })
   return (
-    <div className="App font-sans">
-      <AnimatePresence >
-        {(toggleCalc || toggleRate) && <PopUp isCalc={toggleCalc} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
-      </AnimatePresence>
-      {windowSize.innerWidth<=1000 &&  <Header toggleSearch={toggleSearch} setSearchType={setSearchType} searchType={searchType} searchData={searchData} setSearchData={setSearchData}/> }
-      {
-        windowSize.innerWidth>1000 && 
-        <Navbar
-        searchType={searchType}
-        setSearchType={setSearchType}
-        searchData={searchData}
-        setSearchData={setSearchData}
-        toggleSearch={toggleSearch} 
-        setToggleSearch={setToggleSearch}
-        toggleCalc={toggleCalc} 
-        setToggleCalc={setToggleCalc}
-        toggleRate={toggleRate} 
-        setToggleRate={setToggleRate}
-      />}
-      <div className='h-[100vh] w-[100%]  flex flex-col items-center justify-center'>
-        <DriverDetails driverInfo={filteredDriverList} searchType={searchType} searchData={searchData}/>
-      </div>
-      { 
-        windowSize.innerWidth<=1000 && 
-        <FloatingMenu 
-          toggleSearch={toggleSearch} 
-          setToggleSearch={setToggleSearch}
-          toggleCalc={toggleCalc} 
-          setToggleCalc={setToggleCalc}
-          toggleRate={toggleRate} 
-          setToggleRate={setToggleRate}
-        /> }
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={
+          <div className="App font-sans">
+            <AnimatePresence >
+              {(toggleCalc || toggleRate) && <PopUp isCalc={toggleCalc} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
+            </AnimatePresence>
+            {windowSize.innerWidth<=1000 &&  <Header toggleSearch={toggleSearch} setSearchType={setSearchType} searchType={searchType} searchData={searchData} setSearchData={setSearchData}/> }
+            {
+              windowSize.innerWidth>1000 && 
+              <Navbar
+              searchType={searchType}
+              setSearchType={setSearchType}
+              searchData={searchData}
+              setSearchData={setSearchData}
+              toggleSearch={toggleSearch} 
+              setToggleSearch={setToggleSearch}
+              toggleCalc={toggleCalc} 
+              setToggleCalc={setToggleCalc}
+              toggleRate={toggleRate} 
+              setToggleRate={setToggleRate}
+            />}
+            <div className='h-[100vh] w-[100%]  flex flex-col items-center justify-center overflow-scroll scroll-smooth'>
+              <DriverDetails driverInfo={filteredDriverList} searchType={searchType} searchData={searchData}/>
+            </div>
+            { 
+              windowSize.innerWidth<=1000 && 
+              <FloatingMenu 
+                toggleSearch={toggleSearch} 
+                setToggleSearch={setToggleSearch}
+                toggleCalc={toggleCalc} 
+                setToggleCalc={setToggleCalc}
+                toggleRate={toggleRate} 
+                setToggleRate={setToggleRate}
+              /> }
+          </div>
+        } />
+        <Route exact path="/contact" element={
+          <Feedback />
+        } />
+      </Routes>
+    </Router>
   );
 }
 

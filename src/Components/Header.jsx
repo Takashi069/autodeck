@@ -1,6 +1,8 @@
 import Search from "./Search";
 import {  AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import './component.css'
+
 
 const Header = ({toggleSearch,searchType,setSearchType, searchData,setSearchData}) => {
 
@@ -13,7 +15,24 @@ const Header = ({toggleSearch,searchType,setSearchType, searchData,setSearchData
                     animate={{height: toggleSearch ? 190 : 100}}
                    
                 >
-                    <h1 className="text-left font-extrabold text-3xl mb-7 mt-3 text-[#ffc300] ">AUTODECK</h1>
+                    <div className="flex flex-row justify-evenly items-start">
+                        <h1 className="text-left font-extrabold text-3xl mb-7 mt-3 text-[#ffc300] ">AUTODECK</h1>
+                        <Link to="/contact"><button className="
+                                                            p-2 
+                                                            bg-[#ffd300] 
+                                                            min-w-[20%] 
+                                                            self-center 
+                                                            mb-1 
+                                                            text-white 
+                                                            text-xl 
+                                                            rounded-lg 
+                                                            active:scale-90 
+                                                            transition-all 
+                                                            duration-500"
+                                            >Feedback
+                                            </button>
+                        </Link>
+                    </div>
                     
                     <AnimatePresence>
                         { 
