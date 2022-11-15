@@ -33,6 +33,8 @@ const Search = ({searchType,setSearchType,searchData,setSearchData}) => {
                     defaultMenuIsOpen={false}
                     onChange={(e)=>{setSearchType(e.value)}}
                     options={options}
+                    defaultValue={options[0]}
+
                 />
                
             </span>
