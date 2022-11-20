@@ -71,7 +71,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={
-          <div className="App font-sans">
+          <div className="App font-sans lg:grid lg:grid-cols-[auto_1fr]">
             <AnimatePresence >
               {(toggleCalc || toggleRate) && <PopUp isCalc={toggleCalc} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
             </AnimatePresence>
@@ -92,7 +92,7 @@ function App() {
               setToggleRate={setToggleRate}
             />}
 
-            <div className='h-[100vh] w-[100%] grid grid-cols-1 justify-items-center overflow-scroll scroll-smooth lg:pl-[280px]'>
+            <div className='h-[100vh] w-[100%] grid grid-cols-1 justify-items-center overflow-scroll scroll-smooth  '>
               <DriverDetails driverInfo={filteredDriverList} searchType={searchType} searchData={searchData}/>
             </div>
             { 
