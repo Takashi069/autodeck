@@ -10,7 +10,7 @@ const Navbar = ({searchType,setSearchType,searchData,setSearchData,toggleSearch,
     return ( 
         <motion.div 
             id="navbar" 
-            className="fixed min-w-[15%] min-h-[100%] bg-[#ffd300] flex flex-col justify-evenly"
+            className="min-w-[15%] min-h-[100%] bg-[#ffd300] flex flex-col justify-evenly"
             key="header"
             animate={{width: toggleSearch ? 400 : 280}}
         >
