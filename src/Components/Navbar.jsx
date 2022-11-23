@@ -1,5 +1,6 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiCalculator, BiRupee } from "react-icons/bi";
+import {FaInfoCircle} from "react-icons/fa"
 import {MdFeedback} from 'react-icons/md'
 import { motion,AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -78,6 +79,20 @@ const Navbar = ({searchType,setSearchType,searchData,setSearchData,toggleSearch,
                         <span className="text-2xl font-bold">Feedback</span>
                     </div>
                 </Link>
+                <a href="https://autodeck-info.netlify.app" target="target_blank">
+                    <div 
+                        className="flex flex-row items-center justify-self-auto p-4  hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
+                        onClick={()=>{}}
+                    >
+                        <FaInfoCircle 
+                            className={"cursor-pointer justify-start mr-5"} 
+                            size={35}
+                            // onClick={()=>{setToggleCalc(!toggleCalc)}}
+                        />
+                        <span className="text-2xl font-bold">More Info</span>
+                    </div>
+                </a>
+                
             </div>
         </motion.div>
      );
