@@ -15,17 +15,17 @@ const FloatingMenu = ({toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,to
                 <AiOutlineSearch 
                     className={toggleMenu ? "mb-4 button-animate":"hidden mb-4 button-animate"} 
                     size={35} 
-                    onClick={()=>{setToggleSearch(!toggleSearch)}}
+                    onClick={()=>{setToggleSearch(!toggleSearch); setToggleRate(false); setToggleCalc(false)}}
                 />
                 <BiRupee 
                     className={toggleMenu ? "mb-4 button-animate":"hidden mb-4 button-animate"} 
                     size={35}
-                    onClick={()=>{setToggleRate(!toggleRate)}}
+                    onClick={()=>{setToggleRate(!toggleRate); setToggleSearch(false); setToggleCalc(false)}}
                 />
                 <BiCalculator 
                     className={toggleMenu ? "mb-4 button-animate":"hidden mb-4 button-animate"} 
                     size={35}
-                    onClick={()=>{setToggleCalc(!toggleCalc)}}
+                    onClick={()=>{setToggleCalc(!toggleCalc); setToggleSearch(false); setToggleRate(false);}}
                 />
                 {toggleMenu && <AiOutlineClose className='mb-4 button-animate' size={35} onClick={()=>{setToggleMenu(!toggleMenu)}}/>}
             </motion.div>  
