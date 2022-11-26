@@ -25,7 +25,7 @@ function shuffleArray(array) {
 
 function App() {
   const [driverInfo,setDriverInfo] = useState(null)
-  const {data:temp } = useFetch("https://autodeck-database.herokuapp.com/driverDetails")
+  const {data:temp } = useFetch("https://autodeck-database.glitch.me/driverDetails")
   
   useEffect(()=>{
     if(temp!==null){
