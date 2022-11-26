@@ -15,7 +15,7 @@ const Navbar = ({searchType,setSearchType,searchData,setSearchData,toggleSearch,
             key="header"
             animate={{width: toggleSearch ? 400 : 280}}
         >
-            <h1 className="font-extrabold text-3xl mb-7 mt-3 text-[#ffff] text-center ">AUTODECK</h1>
+            <h1 className="font-extrabold text-3xl mb-7 mt-3 text-[#ffff] text-center ">autodeck</h1>
             <AnimatePresence>
                 { 
                 toggleSearch && 
@@ -35,7 +35,12 @@ const Navbar = ({searchType,setSearchType,searchData,setSearchData,toggleSearch,
             <div id="utilities" className=" gap-4 justify-evenly items-center">
                 <div 
                     className="flex flex-row items-center justify-self-start p-4 hover:text-[#ffd300] hover:bg-white button-animate cursor-pointer"
-                    onClick={()=>{setToggleSearch(!toggleSearch)}}
+                    onClick={()=>{
+                        if(toggleSearch===true) // the search data needs to be reset before toggling search off
+                            setSearchData("")
+                        setToggleSearch(!toggleSearch)
+                        
+                    }}
                 >
                     <AiOutlineSearch 
                         className={"mr-5 cursor-pointer"} 

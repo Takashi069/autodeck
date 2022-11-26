@@ -16,7 +16,7 @@ const Header = ({toggleSearch,searchType,setSearchType, searchData,setSearchData
                    
                 >
                     <div className="flex flex-row justify-evenly items-start">
-                        <h1 className="text-left font-extrabold text-3xl mb-7 mt-3 text-[#ffc300] ">AUTODECK</h1>
+                        <h1 className="text-left font-extrabold text-3xl mb-7 mt-3 text-[#ffc300] ">autodeck</h1>
                         <Link to="/contact"><button className="
                                                             p-2 
                                                             bg-[#ffd300] 

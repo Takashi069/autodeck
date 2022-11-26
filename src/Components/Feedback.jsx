@@ -78,7 +78,6 @@ const Feedback = () => {
                     >Go Back</button>
                 </Link>
                 </div>
-                <br></br>
                 <p className="text-xl ml-5 mt-5 text-[#ffd300] font-bold">{msg}</p>
                 <div className="flex flex-col items-start">
                     <p className="ml-5 mt-5 text-[#ffd300] font-bold">Feedback Type</p>
@@ -91,7 +90,6 @@ const Feedback = () => {
                         />
                     </div>
                 </div>
-                <br></br>
                 <div className="flex flex-col items-start ml-5">
                     <p className="text-slate-500 text-lg" >Name</p>
                     <input type="text" className="w-[90%] p-3 border-solid border-[#ffd300]" placeholder="Enter Name Here" name="name" required></input>

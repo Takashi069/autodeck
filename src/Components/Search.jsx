@@ -24,7 +24,7 @@ const Search = ({searchType,setSearchType,searchData,setSearchData}) => {
                 }
                  <input 
                     type={searchType === "Name" || searchType === "NumberPlate" ? "text":"number"} 
-                    className=" border-solid border-[#ffd300] text-center rounded-md p-1 max-w-[100%]  " 
+                    className=" border-solid border-[#ffd300] text-center rounded-md  max-w-[70%]  " 
                     placeholder={searchType === "Name" ? "Name" : searchType === "Phone" ? "Phone Number" : searchType!=="NumberPlate" ? "Choose an option" : "Number Plate"}
                     autoFocus
                     onChange={(e)=>{setSearchData(e.target.value)}}
@@ -33,8 +33,7 @@ const Search = ({searchType,setSearchType,searchData,setSearchData}) => {
                     defaultMenuIsOpen={false}
                     onChange={(e)=>{setSearchType(e.value)}}
                     options={options}
-                    defaultValue={options[0]}
-
+                    defaultValue={searchType === "Name" ? options[0] : searchType === "Phone" ? options[1] : searchType!=="NumberPlate" ? "Choose an option" : options[2]}
                 />
                
             </span>

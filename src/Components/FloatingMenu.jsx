@@ -3,7 +3,7 @@ import { AiOutlineSearch,AiOutlineMenu, AiOutlineClose,AiOutlineInfoCircle } fro
 import { BiCalculator, BiRupee } from "react-icons/bi";
 import { useState } from 'react';
 import { AnimatePresence,motion } from 'framer-motion';
-const FloatingMenu = ({toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,toggleRate,setToggleRate}) => {
+const FloatingMenu = ({toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,toggleRate,setToggleRate,setSearchData}) => {
     const [toggleMenu,setToggleMenu] = useState(false)
     return (
         <AnimatePresence> 
@@ -15,7 +15,12 @@ const FloatingMenu = ({toggleSearch, setToggleSearch,toggleCalc,setToggleCalc,to
                 <AiOutlineSearch 
                     className={toggleMenu ? "mb-4 button-animate":"hidden mb-4 button-animate"} 
                     size={35} 
-                    onClick={()=>{setToggleSearch(!toggleSearch); setToggleRate(false); setToggleCalc(false)}}
+                    onClick={()=>{
+                        if(toggleSearch===true) // the search data needs to be reset before toggling search off
+                            setSearchData("")
+                        setToggleSearch(!toggleSearch); 
+                        setToggleRate(false); 
+                        setToggleCalc(false)}}
                 />
                 <BiRupee 
                     className={toggleMenu ? "mb-4 button-animate":"hidden mb-4 button-animate"} 

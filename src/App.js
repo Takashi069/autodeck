@@ -39,7 +39,7 @@ function App() {
   const [toggleCalc, setToggleCalc] = useState(false)
   const [toggleRate, setToggleRate] = useState(false)
   const [windowSize, setWindowSize] = useState(getWindowSize());
-  const [searchType,setSearchType] = useState("")
+  const [searchType,setSearchType] = useState("Name")
   const [searchData, setSearchData] = useState("")
 
   useEffect(() => {
@@ -58,12 +58,12 @@ function App() {
         if(driverInfo!=null)
             filteredDriverList = driverInfo.filter((driver)=>{
             if(searchType === "Name")
-                return driver.name.includes(searchData)
+                return driver.name.toLowerCase().includes(searchData.toLowerCase())
             else if(searchType === "Phone"){
                 return driver.phoneNumber.includes(searchData)
             }
             else if(searchType === "NumberPlate")
-                return driver["Number Plate"].includes(searchData)
+                return driver["Number Plate"].toLowerCase().includes(searchData.toLowerCase())
             else
                 return driver
             })
@@ -71,7 +71,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={
-          <div className="App font-sans lg:grid lg:grid-cols-[auto_1fr]">
+          <div className="App lg:grid lg:grid-cols-[auto_1fr]">
             <AnimatePresence >
               {(toggleCalc || toggleRate) && <PopUp isCalc={toggleCalc} isRate={toggleRate} setToggleCalc={setToggleCalc} setRate={setToggleRate}/> }
             </AnimatePresence>
@@ -104,6 +104,7 @@ function App() {
                 setToggleCalc={setToggleCalc}
                 toggleRate={toggleRate} 
                 setToggleRate={setToggleRate}
+                setSearchData={setSearchData}
               /> }
           </div>
         } />
