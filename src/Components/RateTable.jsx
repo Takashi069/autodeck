@@ -5,7 +5,7 @@ const RateTable = ({setRateTable,isRate,isCalc}) => {
     return ( 
         <motion.div 
             key="rateTable" 
-            className="bg-white rounded-md min-h-[60vh] max-h-[60vh] min-w-[40%] max-w-[85%] shadow-sm flex flex-col justify-center items-center"
+            className="bg-white rounded-md min-h-[40%] max-h-[85%] min-w-[40%] max-w-[85%] shadow-sm flex flex-col justify-center items-center"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
