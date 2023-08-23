@@ -51,8 +51,4 @@ We are looking for README.md Contributions at the moment, and help on the issues
 Ask to be assigned to an issue, work out the details, and submit a PR, we'll be in touch.
 
 
-## Authors
-
-- [@Takashi069](https://www.github.com/Takashi069)
-- [@abhinandarun02](https://www.github.com/abhinandarun02)
 
